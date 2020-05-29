@@ -1,7 +1,7 @@
 jobs:
   main:
     requires: [ ~pr, ~commit ]
-    image: node:10
+    image: node:12
     steps:
       - step1: ls
 
