@@ -11,12 +11,14 @@ jobs:
       - ls
   test-cluster01:
     requires: deploy-cluster01
+    image: node:12
     steps:
       - ls
     annotations:
       screwdriver.cd/displayName: test
   test-cluster02:
     requires: deploy-cluster02
+    image: node:12
     steps:
       - ls
     annotations:
