@@ -1,8 +1,23 @@
 jobs:
-  main:
+  deploy-cluster01:
     requires: [ ~pr, ~commit ]
     image: node:12
     steps:
-      - step1: ls
-
-
+      - ls
+  deploy-cluster02:
+    requires: [ ~pr, ~commit ]
+    image: node:12
+    steps:
+      - ls
+  test-cluster01:
+    requires: deploy-cluster01
+    steps:
+      - ls
+    annotations:
+      screwdriver.cd/displayName: test
+  test-cluster02:
+    requires: deploy-cluster02
+    steps:
+      - ls
+    annotations:
+      screwdriver.cd/displayName: test
