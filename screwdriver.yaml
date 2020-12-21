@@ -3,6 +3,7 @@ jobs:
     requires: [ ~pr, ~commit ]
     image: node:10
     steps:
-      - step1: ls
-      - step2: pwd
+      - step1: meta set 50876e6
+      - step2: export FOO=`meta get release_version`
+      - step2: echo $FOO
 
