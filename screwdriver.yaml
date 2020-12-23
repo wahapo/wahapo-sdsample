@@ -9,6 +9,7 @@ jobs:
       - add-comment: meta set meta.summary.comment "Pull Request Comment"
   sub:
     requires: [ main ]
+    image: node:10
     steps:
       - get-comment: meta get meta.summary.comment
 
