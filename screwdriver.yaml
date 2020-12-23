@@ -1,8 +1,14 @@
+annotations:
+  screwdriver.cd/chainPR: true
+
 jobs:
   main:
     requires: [ ~pr, ~commit ]
     image: node:10
     steps:
-      - step1: meta set foo 50876e6
-      - step2: meta get foo
+      - add-comment: meta set meta.summary.comment "Pull Request Comment"
+  sub:
+    requires: [ main ]
+    steps:
+      - get-comment: meta get meta.summary.comment
 
