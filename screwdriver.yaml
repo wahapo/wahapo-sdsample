@@ -7,7 +7,9 @@ jobs:
     image: node:10
     steps:
       - add-comment: meta set meta.summary.comment "Pull Request Comment"
+      - cat: echo $SD_META_PATH && ls -la $SD_META_PATH && cat $SD_META_PATH
   sub:
     requires: [ main ]
     steps:
+      - cat: echo $SD_META_PATH && ls -la $SD_META_PATH && cat $SD_META_PATH
       - get-comment: meta get meta.summary.comment
