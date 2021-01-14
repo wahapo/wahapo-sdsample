@@ -5,3 +5,8 @@ jobs:
     steps:
       - step1: ls
 
+  detached:
+    image: node:10
+    steps:
+      - step1: ls
+ 
