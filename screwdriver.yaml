@@ -1,6 +1,6 @@
 jobs:
   main:
-    requires: [ ~commit:specificBranch-test ]
+    requires: [ ~commit, ~commit:specificBranch-test ]
     image: node:10
     steps:
       - step1: ls
