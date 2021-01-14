@@ -1,8 +1,7 @@
 jobs:
   main:
-    requires: [ ~pr, ~commit ]
+    requires: [ ~commit:specificBranch-test ]
     image: node:10
     steps:
-      - step1: meta set foo 50876e6
-      - step2: meta get foo
+      - step1: ls
 
