@@ -2,7 +2,8 @@ jobs:
   main:
     requires: [ ~pr, ~commit ]
     image: node:10
+    annotations:
+      screwdriver.cd/displayName: this is job name
     steps:
-      - step1: meta set foo 50876e6
-      - step2: meta get foo
+      - ls
 
