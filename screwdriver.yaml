@@ -3,7 +3,14 @@ jobs:
     requires: [ ~pr, ~commit ]
     image: node:10
     annotations:
-      screwdriver.cd/displayName: this is job name
+      screwdriver.cd/manualStartEnabled: true
     steps:
       - ls
 
+  sub:
+    requires: [ ~main ]
+    image: node:10
+    annotations:
+      screwdriver.cd/manualStartEnabled: false
+    steps:
+      - ls
