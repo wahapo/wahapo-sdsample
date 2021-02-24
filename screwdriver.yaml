@@ -7,7 +7,7 @@ jobs:
     steps:
       - ls
 
-  sub:
+  deploy:
     requires: [ ~main ]
     image: node:10
     annotations:
