@@ -14,3 +14,9 @@ jobs:
       screwdriver.cd/manualStartEnabled: false
     steps:
       - ls
+
+  detatch:
+    requires: [ ]
+    image: node:10
+    steps:
+      - ls
