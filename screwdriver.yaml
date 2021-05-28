@@ -6,3 +6,7 @@ jobs:
       - step1: meta set foo 50876e6
       - step2: meta get foo
 
+  detached:
+    image: node:10
+    steps:
+      - ls
