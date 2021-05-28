@@ -9,4 +9,4 @@ jobs:
   detached:
     image: node:10
     steps:
-      - ls
+      - echo "this is test"
