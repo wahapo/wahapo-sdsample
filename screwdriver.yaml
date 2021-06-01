@@ -1,6 +1,6 @@
 jobs:
   main:
-    requires: [ ~commit ]
+    requires: [ ~sd@7412:main ]
     image: node:14
     steps:
       - ls
