@@ -4,3 +4,8 @@ jobs:
     image: node:14
     steps:
       - ls
+  sub:
+    requires: [ ~sd@7413:main ]
+    image: node:14
+    steps:
+      - ls
