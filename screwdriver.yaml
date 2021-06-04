@@ -1,12 +1,5 @@
 jobs:
   main:
-    requires: [ ~pr, ~commit, ~commit:/test/ ]
-    image: node:10
-    steps:
-      - step1: meta set foo 50876e6
-      - step2: meta get foo
+    requires: [~pr,~commit]
+    template: tifftemplate
 
-  detached:
-    image: node:10
-    steps:
-      - ls
