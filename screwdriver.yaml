@@ -2,4 +2,6 @@ jobs:
   main:
     requires: [~pr,~commit]
     template: tifftemplate
-
+    steps:
+      teardown-checkenv: |
+        echo "${SD_TEMPLATE_FULLNAME}:${SD_TEMPLATE_NAMESPACE}:${SD_TEMPLATE_NAME}:${SD_TEMPLATE_VERSION}"
