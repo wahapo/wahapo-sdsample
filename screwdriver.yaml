@@ -1,12 +1,10 @@
 jobs:
   main:
-    requires: [ ~pr, ~commit, ~commit:/test/ ]
-    image: node:10
-    steps:
-      - step1: meta set foo 50876e6
-      - step2: meta get foo
-
-  detached:
+    description: main job
     image: node:10
     steps:
       - ls
+
+  useTemplate:
+    description: main job
+    template: wahapo/wahapotemplate
