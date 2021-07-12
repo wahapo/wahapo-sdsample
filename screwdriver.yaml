@@ -5,34 +5,34 @@ shared:
 
 jobs:
   # pattern 1
-  commit1-1:
+  commit1:
     requires: [ ~commit ]
 
-  commit1-2:
+  commit2:
     requires: [ ~commit ]
 
   job1:
-    requires: [ commit1-1, commit1-2 ]
+    requires: [ commit1, commit2 ]
 
   # pattern 2
-  commit2-1:
-    requires: [ ~commit ]
+  tag1:
+    requires: [ ~tag ]
 
-  commit2-2:
-    requires: [ ~commit ]
+  tag2:
+    requires: [ ~tag ]
 
   job2:
-    requires: [ ~commit2-1, ~commit2-2 ]
+    requires: [ ~tag1, ~tag2 ]
 
   # pattern 3
-  commit3-1:
-    requires: [ ~commit ]
+  release1:
+    requires: [ ~release ]
 
-  commit3-2:
-    requires: [ ~commit ]
+  release2:
+    requires: [ ~release ]
     
-  commit3-3:
-    requires: [ ~commit ]
+  release3:
+    requires: [ ~release ]
 
   job3:
-    requires: [ commit3-1, commit3-2, ~commit3-3 ]
+    requires: [ release1, release2, ~release3 ]
