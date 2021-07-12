@@ -1,12 +1,38 @@
-jobs:
-  main:
-    requires: [ ~pr, ~commit, ~commit:/test/ ]
-    image: node:10
-    steps:
-      - step1: meta set foo 50876e6
-      - step2: meta get foo
+shared:
+  image: node:14
+  steps:
+    - ls
 
-  detached:
-    image: node:10
-    steps:
-      - ls
+jobs:
+  # pattern 1
+  commit1-1:
+    requires: [ ~commit ]
+
+  commit1-2:
+    requires: [ ~commit ]
+
+  job1:
+    requires: [ commit1-1, commit1-2 ]
+
+  # pattern 2
+  commit2-1:
+    requires: [ ~commit ]
+
+  commit2-2:
+    requires: [ ~commit ]
+
+  job2:
+    requires: [ ~commit2-1, ~commit2-2 ]
+
+  # pattern 3
+  commit3-1:
+    requires: [ ~commit ]
+
+  commit3-2:
+    requires: [ ~commit ]
+    
+  commit3-3:
+    requires: [ ~commit ]
+
+  job3:
+    requires: [ commit3-1, commit3-2, ~commit3-3 ]
