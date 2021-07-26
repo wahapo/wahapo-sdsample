@@ -1,12 +1,18 @@
 jobs:
   main:
-    requires: [ ~pr, ~commit, ~commit:/test/ ]
-    image: node:10
+    requires: [ ~pr, ~commit ]
+    image: node:14
     steps:
-      - step1: meta set foo 50876e6
-      - step2: meta get foo
+      - ls
 
-  detached:
-    image: node:10
+  sleep:
+    requires: [ ~pr, ~commit ]
+    image: node:14
+    steps:
+      - sleep 60
+      
+  joined:
+    requires: [ main, sleep ]
+    image: node:14
     steps:
       - ls
