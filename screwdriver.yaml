@@ -2,6 +2,9 @@ jobs:
   main:
     requires: [ ~pr, ~commit, ~commit:/test/ ]
     image: node:10
+    environment:
+      TEST_ENV: test
+      FOO: bar
     steps:
       - step1: meta set foo 50876e6
       - step2: meta get foo
